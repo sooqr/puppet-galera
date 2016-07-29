@@ -8,6 +8,7 @@
 #
 class galera::firewall (
   $source = undef,
+  $iniface = undef,
 ) {
 
   $galera_ports = [
@@ -17,10 +18,11 @@ class galera::firewall (
     $galera::wsrep_inc_state_transfer_port]
 
   firewall { '4567 galera accept tcp':
-    before => Anchor['mysql::server::start'],
-    proto  => 'tcp',
-    port   => $galera_ports,
-    action => accept,
-    source => $source,
+    before  => Anchor['mysql::server::start'],
+    proto   => 'tcp',
+    port    => $galera_ports,
+    iniface => $iniface,
+    action  => accept,
+    source  => $source,
   }
 }
