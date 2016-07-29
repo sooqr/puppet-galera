@@ -75,7 +75,7 @@
 #
 # [*vendor_type*]
 #   (optional) The galera vendor to use. Valid options
-#   are 'mariadb' and 'percona'
+#   are 'mariadb', 'percona', 'codership' and 'osp5'
 #   Defaults to 'percona'
 #
 # [*vendor_version*]
