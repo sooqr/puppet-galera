@@ -116,6 +116,7 @@ class galera::params {
     $default_options = {
       'mysqld' => {
         'bind-address'                      => $galera::bind_address,
+        'wsrep_on'                          => 'ON',
         'wsrep_node_address'                => $galera::local_ip,
         'wsrep_provider'                    => $galera::params::libgalera_location,
         'wsrep_cluster_address'             => "gcomm://${server_csl}",
